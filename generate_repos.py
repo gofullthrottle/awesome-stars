@@ -1,12 +1,13 @@
 import requests
 import json
 from datetime import datetime
+import os
 
 # GitHub username
 username = "gofullthrottle"
 
 # GitHub token
-token = "YOUR_GITHUB_TOKEN"
+token = os.getenv("GITHUB_TOKEN")
 
 def get_repos(url):
     repos = []
