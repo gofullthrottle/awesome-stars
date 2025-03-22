@@ -1,6 +1,3 @@
-Your script looks mostly correct, but here are a few improvements and comments added for clarity:
-
-```python
 import requests
 import json
 from datetime import datetime
@@ -67,6 +64,9 @@ def repo_loop(repos):
 def main():
     """
     Main function to fetch and process starred and forked repositories.
+
+    - Ensure the `GITHUB_TOKEN` environment variable is set before running the script.
+    - The script fetches both starred and forked repositories, processes them, and generates markdown files.
     """
     starred_repos_url = f"https://api.github.com/users/{username}/starred"
     forked_repos_url = f"https://api.github.com/users/{username}/repos?type=fork"
@@ -79,9 +79,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
-
-### Key Points:
-- Added docstrings to functions for better understanding.
-- Ensure the `GITHUB_TOKEN` environment variable is set before running the script.
-- The script fetches both starred and forked repositories, processes them, and generates markdown files.
